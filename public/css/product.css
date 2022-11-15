@@ -13,6 +13,14 @@
     background-size: cover;
 }
 
+.image-slider2{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-image: url('../img/green_dress1.webp');
+    background-size: cover;
+}
+
 .product-images{
     position: absolute;
     bottom: 2px;
