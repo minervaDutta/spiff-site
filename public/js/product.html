@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="addedToCart">Product - shirt #32456 </title>
+    <title>Product - shirt </title>
 
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/product.css">
@@ -29,8 +29,8 @@
         </div>
 
         <div class="details">
-            <h2 class="product-brand">Calvin Klein</h2>
-            <p class="product-short-des">
+            <h2 class="product-brand">Calvin Klein Shirt #32456</h2>
+            <p class="product-short-des" id="addedToCart">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -39,7 +39,7 @@
                 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
                 culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <span class="product-price">$99</span>
+            <span class="product-price" >$99</span>
             <span class="product-actual-price">$200</span>
             <span class="product-discount">(50% off)</span>
 
@@ -59,7 +59,7 @@
             <input type="radio" name="size" value="s" hidden id ="xxl-size">
             <label for="xxl-size" class="size-radio-btn">xxl</label>
 
-            <a href = "cart.html" onclick="addedCart()"><button class="btn cbutton" >add to cart</button></a>
+            <a href = "cart.html"><button onclick="trackAddedCart()" class="btn cbutton" >add to cart</button></a>
             <button class="btn">add to wishlist</button>
         </div>
     </section>
@@ -287,20 +287,16 @@
             </div>
     </section>
 
-    <script>
-        function addedCart(){
-            var name = document.querySelector('#addedToCart');
-        
-            analytics.track("added to cart",{
-                item: name.value,
-            });
  
-        }
-      </script>
     <footer></footer>
     <script src="../js/nav.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/home.js"></script>
     <script src="../js/product.js"></script>
+    <script>
+        function trackAddedCart(){
+            analytics.track("added to cart");
+        }
+      </script>
 </body>
 </html>

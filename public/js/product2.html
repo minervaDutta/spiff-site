@@ -29,7 +29,7 @@
         </div>
 
         <div class="details">
-            <h2 class="product-brand">Calvin Klein - Summer Dress</h2>
+            <h2 class="product-brand">Stunner - Summer Dress</h2>
             <p class="product-short-des">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -59,7 +59,7 @@
             <input type="radio" name="size" value="s" hidden id ="xxl-size">
             <label for="xxl-size" class="size-radio-btn">xxl</label>
 
-            <a href="cart.html"><button class="btn cbutton">add to cart</button></a>
+            <a href="cart.html" onclick="addedToCart()" ><button class="btn cbutton">add to cart</button></a>
             <button class="btn">add to wishlist</button>
         </div>
     </section>
@@ -293,5 +293,12 @@
     <script src="../js/footer.js"></script>
     <script src="../js/home.js"></script>
     <script src="../js/product.js"></script>
+    <script>
+        function addedToCart(){
+            analytics.track(
+                "added to cart"
+            )
+        }
+    </script>
 </body>
 </html>

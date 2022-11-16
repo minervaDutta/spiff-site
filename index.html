@@ -143,21 +143,21 @@
     <!-- collections -->
 
     <section class="collection-container">
-        <a href="#" class="collection">
+        <a href="#" class="collection" onclick="trackClick()">
             <img src="public/img/women-collection.png" alt="">
             <p class="collection-title">for<br>women</p>
 
             </p>
         </a>
 
-        <a href="#" class="collection">
+        <a href="#" class="collection" onclick="trackClick()">
             <img src="public/img/men-collection.png" alt="">
             <p class="collection-title">for<br>men</p>
 
             </p>
         </a>
 
-        <a href="#" class="collection">
+        <a href="#" class="collection" onclick="trackClick()">
             <img src="public/img/accessories-collection.png" alt="">
             <p class="collection-title">accessories</p>
 
@@ -395,6 +395,18 @@
     <script src = "public/js/nav.js"></script>
     <script src = "public/js/home.js"></script>
     <script src = "public/js/footer.js"></script>
+
+    <script>
+        var interest = "";
+        function trackClick(){
+            var interest = document.querySelector('.collection');
+            console.log(interest.textContent);
+            analytics.track("tracked interest",{
+                collection: interest.innerHTML
+            });
+ 
+        }
+      </script>
     
 </body>
 </html>
