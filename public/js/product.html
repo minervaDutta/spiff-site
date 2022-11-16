@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product - shirt </title>
+    <title id="addedToCart">Product - shirt #32456 </title>
 
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/product.css">
@@ -59,7 +59,7 @@
             <input type="radio" name="size" value="s" hidden id ="xxl-size">
             <label for="xxl-size" class="size-radio-btn">xxl</label>
 
-            <a href = "cart.html"><button class="btn cbutton">add to cart</button></a>
+            <a href = "cart.html" onclick="addedCart()"><button class="btn cbutton" >add to cart</button></a>
             <button class="btn">add to wishlist</button>
         </div>
     </section>
@@ -287,7 +287,16 @@
             </div>
     </section>
 
-
+    <script>
+        function addedCart(){
+            var name = document.querySelector('#addedToCart');
+        
+            analytics.track("added to cart",{
+                item: name.value,
+            });
+ 
+        }
+      </script>
     <footer></footer>
     <script src="../js/nav.js"></script>
     <script src="../js/footer.js"></script>
