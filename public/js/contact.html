@@ -53,9 +53,22 @@
             <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
           </div>
           <div class="submit">
-            <input type="submit" value="Send Message" id="form_button" />
+            <input type="submit" value="Send Message" id="form_button" onclick="trackGetInTouch()" />
           </div>
         </form><!-- // End form -->
       </div><!-- // End #container -->
+      <script>
+        function trackGetInTouch(){
+            var name = document.querySelector('#name_input');
+            var email = document.querySelector('#email_input');
+            var phone = document.querySelector('#telephone_input');
+            analytics.track("get in touch clicked",{
+                name: name.value,
+                email: email.value,
+                phone: phone.value
+            });
+ 
+        }
+      </script>
   </body>
   </html>
