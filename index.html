@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Owl Clothes - The Best Online Apparels Store</title>
     <link rel="stylesheet" href="/public/css/home.css">
+
+    <script>
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="hFaLVckAG3lOmE2ENrf7Js4yRoIgdUKd";;analytics.SNIPPET_VERSION="4.15.3";
+        analytics.load("hFaLVckAG3lOmE2ENrf7Js4yRoIgdUKd");
+        analytics.page();
+        }}();
+      </script>
 </head>
 
-<script>
-    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="hFaLVckAG3lOmE2ENrf7Js4yRoIgdUKd";;analytics.SNIPPET_VERSION="4.15.3";
-    analytics.load("hFaLVckAG3lOmE2ENrf7Js4yRoIgdUKd");
-    analytics.page();
-    }}();
-  </script>
+
 <body>
 
     <nav class="navbar">
@@ -143,21 +145,21 @@
     <!-- collections -->
 
     <section class="collection-container">
-        <a href="#" class="collection" onclick="trackClick()">
+        <a href="#" class="collection" onclick="trackClick3()">
             <img src="public/img/women-collection.png" alt="">
             <p class="collection-title">for<br>women</p>
 
             </p>
         </a>
 
-        <a href="#" class="collection" onclick="trackClick()">
+        <a href="#" class="collection" onclick="trackClick2()">
             <img src="public/img/men-collection.png" alt="">
             <p class="collection-title">for<br>men</p>
 
             </p>
         </a>
 
-        <a href="#" class="collection" onclick="trackClick()">
+        <a href="#" class="collection" onclick="trackClick1()">
             <img src="public/img/accessories-collection.png" alt="">
             <p class="collection-title">accessories</p>
 
@@ -397,12 +399,30 @@
     <script src = "public/js/footer.js"></script>
 
     <script>
-        var interest = "";
-        function trackClick(){
-            var interest = document.querySelector('.collection');
-            console.log(interest.textContent);
-            analytics.track("tracked interest",{
-                collection: interest.innerHTML
+        
+        function trackClick1(){
+            var interest1 = document.querySelector('.collection');
+            console.log(interest1);
+            analytics.track("tracked interest - accessories",{
+                interest: "accessories"
+            });
+ 
+        }
+
+        function trackClick2(){
+            var interest2 = document.querySelector('.collection');
+            console.log(interest2);
+            analytics.track("tracked interest - men",{
+                interest: "men_clothes"
+            });
+ 
+        }
+
+        function trackClick3(){
+            var interest3 = document.querySelector('.collection');
+            console.log(interest3);
+            analytics.track("tracked interest - women",{
+                interest: "woman_clothes"
             });
  
         }
